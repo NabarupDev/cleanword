@@ -1,0 +1,24 @@
+{
+  "abuse_words": [
+    { "ur": "حرامی", "ur_en": "haraami" },
+    { "ur": "کمینہ", "ur_en": "kameena" },
+    { "ur": "چوتیا", "ur_en": "chutiya" },
+    { "ur": "ماں چود", "ur_en": "maan chod" },
+    { "ur": "بہن چود", "ur_en": "behen chod" },
+    { "ur": "گاندو", "ur_en": "gaandu" },
+    { "ur": "لنڈ", "ur_en": "lund" },
+    { "ur": "چدنے والا", "ur_en": "chadne wala" },
+    { "ur": "بوسڑی کے", "ur_en": "bhosdi ke" },
+    { "ur": "کنجر", "ur_en": "kanjar" },
+    { "ur": "رنڈی", "ur_en": "randi" },
+    { "ur": "بھڑوا", "ur_en": "bhadwa" },
+    { "ur": "گشتی", "ur_en": "gashti" },
+    { "ur": "چوتڑ", "ur_en": "chutar" },
+    { "ur": "تیری ماں کی", "ur_en": "teri maa ki" },
+    { "ur": "تم حرامی ہو", "ur_en": "tum haraami ho" },
+    { "ur": "چوپ کر", "ur_en": "chup kar" },
+    { "ur": "موٹا سور", "ur_en": "mota soor" },
+    { "ur": "کتے کا بچہ", "ur_en": "kutte ka bacha" },
+    { "ur": "حرام خور", "ur_en": "haraamkhor" }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "abuse_words": [
+    { "ta": "மூடா", "ta_en": "mooda" },
+    { "ta": "புன்னாக்கு", "ta_en": "punnakku" },
+    { "ta": "தரமையாதவன்", "ta_en": "tharamaiyadaavan" },
+    { "ta": "தரமையாதவள்", "ta_en": "tharamaiyadaaval" },
+    { "ta": "பொம்பளைக்கேவளி", "ta_en": "pombalaikevali" },
+    { "ta": "சூத்து", "ta_en": "soothu" },
+    { "ta": "வாயப்புடி", "ta_en": "vaayappudi" },
+    { "ta": "சட்டை கழடு", "ta_en": "sattai kazhadu" },
+    { "ta": "பச்சி", "ta_en": "pachchi" },
+    { "ta": "முட்டாள்", "ta_en": "muttaal" },
+    { "ta": "தோழி புடுங்கி", "ta_en": "thozhi pudungi" },
+    { "ta": "மயிரு", "ta_en": "mayiru" },
+    { "ta": "தாயி ன பை", "ta_en": "thaayin pai" },
+    { "ta": "பொறுக்கி", "ta_en": "porukki" },
+    { "ta": "கூலி பண்டி", "ta_en": "kooli pundi" },
+    { "ta": "தரமையா", "ta_en": "tharamaayaa" },
+    { "ta": "வயிறு கிழியட்டும்", "ta_en": "vayiru kizhiattum" },
+    { "ta": "நாயே", "ta_en": "naaye" },
+    { "ta": "கொல்லட்டும்", "ta_en": "kollattum" },
+    { "ta": "உன் மூத தாய்", "ta_en": "un mootha thaai" }
+  ]
+}

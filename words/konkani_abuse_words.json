@@ -1,0 +1,13 @@
+{
+  "abuse_words": [
+    { "kn": "मादरचोद", "kn_en": ["madarchod", "mdrchd"] },
+    { "kn": "भोसड़ी", "kn_en": ["bhosdi", "bhosari"] },
+    { "kn": "बहनचोद", "kn_en": ["bhenchod", "behnchod"] },
+    { "kn": "गांडू", "kn_en": ["gandu", "gaandu"] },
+    { "kn": "हरामखोर", "kn_en": ["haramkhor"] },
+    { "kn": "लुंड", "kn_en": ["lund", "londa"] },
+    { "kn": "चूतिया", "kn_en": ["chutiya", "chutia"] },
+    { "kn": "कुत्र्या चे पोरा", "kn_en": ["kutrya che pora", "kutrya ka baccha"] },
+    { "kn": "तुझ्या मायचे", "kn_en": ["tuzya mayche", "tuzya maa ke"] }
+  ]
+}

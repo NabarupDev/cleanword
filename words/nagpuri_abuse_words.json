@@ -1,0 +1,14 @@
+{
+  "abuse_words": [
+    { "np": "मादरचोद", "np_en": ["madarchod", "mdrchd"] },
+    { "np": "बहनचोद", "np_en": ["bhenchod", "behnchod"] },
+    { "np": "भोसड़ी", "np_en": ["bhosdi", "bhosri"] },
+    { "np": "गांडू", "np_en": ["gandu", "gaandu"] },
+    { "np": "हरामी", "np_en": ["harami", "haraami"] },
+    { "np": "लुंड", "np_en": ["lund", "londa"] },
+    { "np": "हरामखोर", "np_en": ["haramkhor"] },
+    { "np": "रांड़", "np_en": ["raand", "rand"] },
+    { "np": "तेरी माई की...", "np_en": ["teri maa ki", "teri maai ki"] },
+    { "np": "चूतिया", "np_en": ["chutiya", "chutia"] }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "abuse_words": [
+    { "kn": "ಗಾಂಡು", "kn_en": "gaandu" },
+    { "kn": "ಸುನ್ದಿ", "kn_en": "sundi" },
+    { "kn": "ಚೂತಿ", "kn_en": "chooti" },
+    { "kn": "ಲೋಫರ್", "kn_en": "loafer" },
+    { "kn": "ಕೂಲಿ ನಾಯಿ", "kn_en": "kooli naayi" },
+    { "kn": "ನಾಯಿಮಗ", "kn_en": "naayi maga" },
+    { "kn": "ಬೋಸುಡಿ", "kn_en": "bosudi" },
+    { "kn": "ಬಂಡೆ", "kn_en": "bande" },
+    { "kn": "ಗಂಡಾಚೋರ", "kn_en": "ganda chora" },
+    { "kn": "ಚೆಡ್ಡವನ", "kn_en": "cheddavana" },
+    { "kn": "ಮೂಢನ", "kn_en": "moodhana" },
+    { "kn": "ಚುಚ್ಚುಮಗ", "kn_en": "chuchchu maga" },
+    { "kn": "ತಿನ್ನೋ ನಾಯಿ", "kn_en": "thinnonaayi" },
+    { "kn": "ನಿನ್ ಅಪ್ಪನ", "kn_en": "nin appana" },
+    { "kn": "ಚಂದ್ರಮುಖಿ", "kn_en": "chandramukhi" },  
+    { "kn": "ಪೆದ್ದ", "kn_en": "pedda" },
+    { "kn": "ಕುಡಿಗ", "kn_en": "kudiga" },
+    { "kn": "ಕೂವತ್ತ", "kn_en": "koovatta" },
+    { "kn": "ಬುದ್ಧಿಹೀನ", "kn_en": "buddhihiina" },
+    { "kn": "ಜೋಕರ", "kn_en": "joker" }
+  ]
+}

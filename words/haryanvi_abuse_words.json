@@ -1,0 +1,24 @@
+{
+  "abuse_words": [
+    { "hr": "बहनचोद", "hr_en": ["bhenchod", "behnchod", "bhnchod"] },
+    { "hr": "मादरचोद", "hr_en": ["madarchod", "mdrchd", "madrchod"] },
+    { "hr": "भोसड़ी के", "hr_en": ["bhosdi ke", "bhosri ke", "bhosdike"] },
+    { "hr": "गांडू", "hr_en": ["gandu", "gaandu", "gndu"] },
+    { "hr": "चुतिया", "hr_en": ["chutiya", "chutia", "chutya"] },
+    { "hr": "हरामी", "hr_en": ["harami", "haraami", "hrmi"] },
+    { "hr": "हरामखोर", "hr_en": ["haramkhor", "hrmkhor"] },
+    { "hr": "रांड", "hr_en": ["rand", "randi", "raand"] },
+    { "hr": "झाट", "hr_en": ["jhaat", "jhat", "jhatka"] },
+    { "hr": "लुंड", "hr_en": ["lund", "lunda", "lond"] },
+    { "hr": "भड़वा", "hr_en": ["bhadwa", "bhadva", "bhaduwa"] },
+    { "hr": "बकलोल", "hr_en": ["baklol", "bakloul"] },
+    { "hr": "खच्चर", "hr_en": ["khacchar", "kchhr"] },
+    { "hr": "तेरी माँ की...", "hr_en": ["teri maa ki", "teri ma ki"] },
+    { "hr": "तेरी बहन की...", "hr_en": ["teri bahan ki", "teri behan ki"] },
+    { "hr": "तेरे बाप की...", "hr_en": ["tere baap ki", "tere bap ki"] },
+    { "hr": "तेरा बाप हूँ", "hr_en": ["tera baap hoon", "tera bap hu"] },
+    { "hr": "तेरी गांड मारूँ", "hr_en": ["teri gaand maarun", "teri gand marun"] },
+    { "hr": "गांड फाड़ दूँ", "hr_en": ["gand phaad doon", "gaand fad du"] },
+    { "hr": "भोसड़ी के छोरे", "hr_en": ["bhosdi ke chore", "bhosdi ka chora"] }
+  ]
+}

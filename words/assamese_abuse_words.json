@@ -1,0 +1,20 @@
+{
+  "abuse_words": [
+    { "as": "বোকাচোদা", "as_en": ["bokachoda", "bokachuda", "bokachoda"] },
+    { "as": "মাদৰচোদ", "as_en": ["madarchod", "madrchod", "madarchod"] },
+    { "as": "ভেনচোদ", "as_en": ["bhenchod", "bhnchod", "venchod"] },
+    { "as": "চুটি", "as_en": ["chuti", "chutii", "chutiya"] },
+    { "as": "চুতীয়া", "as_en": ["chutiya", "chutia", "chutiyaa"] },
+    { "as": "হৰামজাদা", "as_en": ["haramzada", "haraamjada", "hrmzda"] },
+    { "as": "ৰাণ্ডী", "as_en": ["randi", "rundy", "raandi"] },
+    { "as": "গাঁডু", "as_en": ["gandu", "gaandu"] },
+    { "as": "লুণ্ড", "as_en": ["lund", "lond", "lunda"] },
+    { "as": "চোদন", "as_en": ["chodon", "chudan"] },
+    { "as": "জাৰ", "as_en": ["jaar", "jar"] },
+    { "as": "তোৰ মাক চুদিম", "as_en": ["tor maak chudim", "tor maa ko ch*du"] },
+    { "as": "তোৰ ভাইন চুদিম", "as_en": ["tor bhain chudim", "tor bhn chodu"] },
+    { "as": "খং খোৱা বোকাচোদা", "as_en": ["khang khuwa bokachoda", "khang bokachod"] },
+    { "as": "জোতখোৱা", "as_en": ["jotkhowa", "jotkhua", "jothkhua"] },
+    { "as": "চালীৰ বাচা", "as_en": ["chali'r bacha", "chaalir bacha", "ch** ke bacche"] }
+  ]
+}
