@@ -1,25 +1,25 @@
+const express = require('express');
+const bodyParser = require('body-parser');
 const { cleanText } = require('./index');
 
-// Example test cases
-const testInputs = [
-  'This is a test sentence with some abusive words.',
-  'Type any abusive word here to check.',
-  'Multiple languages: khacchar, गाली, kutto, chudi, চুদি, haramkhor, साला, ৰাণ্ডী',
-  'No bad words here!'
-];
+const app = express();
+const port = 3000;
 
+app.use(bodyParser.json());
 
-console.log('Testing cleanText function:');
-
-async function runTests() {
-  for (let idx = 0; idx < testInputs.length; idx++) {
-    const input = testInputs[idx];
-    const cleaned = await cleanText(input);
-    console.log(`Test ${idx + 1}:`);
-    console.log('Original:', input);
-    console.log('Cleaned :', cleaned);
-    console.log('---');
+app.post('/clean', async (req, res) => {
+  const { text } = req.body;
+  if (typeof text !== 'string') {
+    return res.status(400).json({ error: 'Missing or invalid "text" field in request body.' });
   }
-}
+  try {
+    const cleaned = await cleanText(text);
+    res.json({ cleaned });
+  } catch (err) {
+    res.status(500).json({ error: 'Internal server error.' });
+  }
+});
 
-runTests();
+app.listen(port, () => {
+  console.log(`server is listening at http://localhost:${port}`);
+});
