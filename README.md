@@ -1,67 +1,111 @@
-# No Gaali Zone
 
-> A simple, multi-language, profanity filter for Indian languages.
+# No Gaali Zone 🚫
 
-## Overview
+Welcome to **No Gaali Zone**! This is a friendly, open-source tool for Node.js that helps you keep your apps, chats, and communities clean by automatically censoring abusive words in many Indian and international languages. Whether you’re building a chat app, a forum, or just want to keep things civil, this package has your back.
 
-**No Gaali Zone** is a Node.js library that helps you detect and clean abusive words ("gaali") from text in multiple Indian languages. It uses curated lists of abusive words for each language and can be easily integrated into your projects to keep your content clean and respectful.
+---
 
-## Features
+## ✨ Why use No Gaali Zone?
 
-- Detects and censors abusive words in 20+ Indian languages
-- Easy to use API
-- Fast lookup using Set data structure
-- Easily extensible with new word lists
+- **Multilingual**: Censors bad words in Hindi, Bengali, Assamese, and more.
+- **Unicode Smart**: Handles Indian scripts, diacritics, and all those tricky characters.
+- **Fast & Lightweight**: Uses JavaScript Sets for super-quick lookups.
+- **Easy to Extend**: Add your own words if you want.
+- **API Ready**: Comes with a plug-and-play Express.js REST API server.
+- **Tested**: Reliable, with tests included.
 
-## Supported Languages
+---
 
-Assamese, Bengali, Bhojpuri, Bundelkhandi, Chhattisgarhi, Gujarati, Haryanvi, Hindi, Kannada, Konkani, Maithili, Malayalam, Marathi, Marwari, Meitei, Nagpuri, Odia, Punjabi, Rajasthani, Tamil, Telugu, Urdu
+## 🚀 Getting Started
 
-## Installation
+Install it with npm:
 
 ```bash
 npm install no-gaali-zone
 ```
 
-Or clone this repository:
+---
 
-```bash
-git clone https://github.com/NabarupDev/no-gaali-zone.git
-cd no-gaali-zone
-```
+## 🛠️ How to Use
 
-## Usage
+### 1. As a Library
 
 ```js
 const { cleanText } = require('no-gaali-zone');
 
-const input = 'You are a badword!'; // Replace 'badword' with an actual abusive word from the lists
+const input = 'Multiple languages: khacchar, गाली, kutto, chudi, চুদি , haramkhor, साला, ৰাণ্ডী';
 const cleaned = cleanText(input);
-console.log(cleaned); // Output: You are a ******!
+console.log(cleaned); // All abusive words are now asterisks!
 ```
 
-### How it works
+### 2. With Your Own Word List
 
-The library loads abusive words from JSON files in the `words/` directory and creates a fast lookup set. When you call `cleanText(text)`, it replaces any abusive word with asterisks (\*), preserving the original word length.
+Want to block your own set of words? No problem:
 
-## Project Structure
+```js
+const { cleanText, buildAbuseSet } = require('no-gaali-zone');
+const myWords = ['badword1', 'badword2'];
+const mySet = buildAbuseSet(myWords);
+const cleaned = cleanText('badword1 is here', mySet);
+```
 
-- `index.js` – Main module exposing the API
-- `server.js` – (Optional) Example server usage
-- `words/` – JSON files containing abusive words for each language
+### 3. As an API Server
 
-## Adding/Updating Word Lists
+Spin up the server:
 
-To add or update abusive words for a language, edit or add a JSON file in the `words/` directory. Each file should export an array of words or an object with an `abuse_words` array.
+```bash
+node server.js
+```
 
-## Contributing
+Then send a POST request (for example, with curl or Postman):
 
-Contributions are welcome! Please open an issue or submit a pull request to add new words, fix bugs, or suggest improvements.
+```bash
+curl -X POST http://localhost:3000/clean -H "Content-Type: application/json" -d '{"text": "Type any abusive word here to check."}'
+```
 
-## License
+You’ll get back:
+
+```json
+{
+  "cleaned": "Type any abusive word here to check."
+}
+```
+
+---
+
+## 📚 API Reference
+
+### `cleanText(text, [customAbuseSet])`
+- `text` (string): The text you want to clean.
+- `customAbuseSet` (Set, optional): Your own set of words to block. If you skip this, the built-in list is used.
+- **Returns:** The cleaned text, with abusive words replaced by asterisks (same length as the word).
+
+### `buildAbuseSet(words)`
+- `words` (array): An array of words you want to block.
+- **Returns:** A Set for fast lookups.
+
+---
+
+## 🧪 Running Tests
+
+```bash
+npm test
+```
+
+---
+
+## 🤝 Contributing
+
+Found a bug? Want to add more words or languages? Suggestions are always welcome! Please open an issue or a pull request. Let’s make the internet a little kinder, together.
+
+---
+
+## 📄 License
 
 MIT License. See [LICENSE](LICENSE) for details.
 
-## Author
+---
 
-Nabarup Roy
+## 👤 Author
+
+Made with ❤️ by Nabarup Roy
