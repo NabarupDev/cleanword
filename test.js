@@ -1,10 +1,12 @@
+// WARNING: this file contains profanity. The below list of profane words is necessary for this tool to function properly.
+// Do not read below this line if you do not wish to be exposed to lots of profane words
+
 const { cleanText } = require('./index');
 
-// Example test cases
 const testInputs = [
   'This is a test sentence with some abusive words.',
   'Type any abusive word here to check.',
-  'Multiple languages: khacchar, गाली, kutto, chudi, চুদি , haramkhor, साला, ৰাণ্ডী',
+  'Multiple languages: khacchar, गाली, kutto, chudi, চুদি , haramkhor, साला, ৰাণ্ডী fuck',
   'No bad words here!'
 ];
 

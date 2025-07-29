@@ -8,6 +8,7 @@ bower_components/
 .env.development.local
 .env.test.local
 .env.production.local
+.vscode
 
 # Logs
 logs
@@ -41,4 +42,7 @@ yarn.lock
 .Trashes
 ehthumbs.db
 Thumbs.db
-profane-words.ts
+
+
+duplicate.js
+test.js
