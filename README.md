@@ -1,111 +1,149 @@
+<div align="center">
+ <h1>Cleantext</h1>
+</div>
 
-# No Gaali Zone 🚫
+A simple, fast, and extensible JavaScript package to detect and censor abusive words in multiple Indian and international languages. Useful for chat moderation, content filtering, and building safe online communities.
 
-Welcome to **No Gaali Zone**! This is a friendly, open-source tool for Node.js that helps you keep your apps, chats, and communities clean by automatically censoring abusive words in many Indian and international languages. Whether you’re building a chat app, a forum, or just want to keep things civil, this package has your back.
-
----
-
-## ✨ Why use No Gaali Zone?
-
-- **Multilingual**: Censors bad words in Hindi, Bengali, Assamese, and more.
-- **Unicode Smart**: Handles Indian scripts, diacritics, and all those tricky characters.
-- **Fast & Lightweight**: Uses JavaScript Sets for super-quick lookups.
-- **Easy to Extend**: Add your own words if you want.
-- **API Ready**: Comes with a plug-and-play Express.js REST API server.
-- **Tested**: Reliable, with tests included.
+## Features
+- Detects and censors abusive words in Hindi, English, Bengali, Urdu, and more
+- Customizable censorship character (grawlix)
+- Fine-grained control with `alwaysAllow` and `alwaysBlock` word lists
+- Easy to use and integrate in Node.js projects
 
 ---
 
-## 🚀 Getting Started
+## Installation
 
-Install it with npm:
-
-```bash
-npm install no-gaali-zone
+```sh
+npm install cleantext
 ```
 
 ---
 
-## 🛠️ How to Use
+## Usage
 
-### 1. As a Library
-
+### Basic Example
 ```js
-const { cleanText } = require('no-gaali-zone');
+const { cleanText } = require('cleantext');
 
-const input = 'Multiple languages: khacchar, गाली, kutto, chudi, চুদি , haramkhor, साला, ৰাণ্ডী';
-const cleaned = cleanText(input);
-console.log(cleaned); // All abusive words are now asterisks!
+const options = {
+  language: ['english', 'hindi'],
+  grawlixChar: '@',
+  alwaysAllow: ['kutto'],
+  alwaysBlock: ['test', 'what'],
+};
+const cleaned = cleanText('This is a test sentence with kutto and what.', options);
+console.log(cleaned); // This is a @@@@ sentence with kutto and @@@@..
 ```
 
-### 2. With Your Own Word List
+### API
+#### `cleanText(text, options)`
+- **text** (`string`): The input string to clean.
+- **options** (`object`, optional):
+  - `language`: `string | string[]` — Language(s) to check (default: `'hindi'`).
+  - `grawlixChar`: `string` — Character to use for censorship (default: `'*'`).
+  - `alwaysAllow`: `string[]` — Words that should never be censored, even if abusive.
+  - `alwaysBlock`: `string[]` — Words that should always be censored, even if not abusive.
+  - `customAbuseSet`: `Set<string>` — Custom set of abusive words (for advanced use/testing).
 
-Want to block your own set of words? No problem:
+Returns: The cleaned string with abusive words replaced by the grawlix character.
 
+#### Example with config options
 ```js
-const { cleanText, buildAbuseSet } = require('no-gaali-zone');
-const myWords = ['badword1', 'badword2'];
-const mySet = buildAbuseSet(myWords);
-const cleaned = cleanText('badword1 is here', mySet);
-```
-
-### 3. As an API Server
-
-Spin up the server:
-
-```bash
-node server.js
-```
-
-Then send a POST request (for example, with curl or Postman):
-
-```bash
-curl -X POST http://localhost:3000/clean -H "Content-Type: application/json" -d '{"text": "Type any abusive word here to check."}'
-```
-
-You’ll get back:
-
-```json
-{
-  "cleaned": "Type any abusive word here to check."
-}
+const options = {
+  language: ['english', 'hindi'],
+  grawlixChar: '@',
+  alwaysAllow: ['kutto'],
+  alwaysBlock: ['test', 'what'],
+};
+const cleaned = cleanText('This is a test sentence with kutto and what.', options);
+console.log(cleaned); // This is a @@@@ sentence with kutto and @@@@.
 ```
 
 ---
 
-## 📚 API Reference
+## Config Options
 
-### `cleanText(text, [customAbuseSet])`
-- `text` (string): The text you want to clean.
-- `customAbuseSet` (Set, optional): Your own set of words to block. If you skip this, the built-in list is used.
-- **Returns:** The cleaned text, with abusive words replaced by asterisks (same length as the word).
-
-### `buildAbuseSet(words)`
-- `words` (array): An array of words you want to block.
-- **Returns:** A Set for fast lookups.
+| Option         | Type            | Description |
+|----------------|----------------|-------------|
+| `language`     | string/string[] | Languages to check (e.g. `'hindi'`, `'english'`, `'bengali'`, `'urdu'`) |
+| `grawlixChar`  | string          | Character to use for censorship (default: `'*'`) |
+| `alwaysAllow`  | string[]        | Words to never censor |
+| `alwaysBlock`  | string[]        | Words to always censor |
+| `customAbuseSet` | Set<string>    | Custom abusive word set (advanced/testing) |
 
 ---
 
-## 🧪 Running Tests
+## Supported Languages
 
-```bash
-npm test
+- Hindi
+- English
+- Assamese
+- Bengali
+- Bhojpuri
+- Marathi
+- Chhattisgarhi
+- Gujarati
+- Haryanvi
+- Kannada 
+- Kashmiri
+- Konkani
+- Ladakhi
+- Malayalam
+- Manipuri
+- Marwari
+- Nepali
+- Odia
+- Punjabi
+- Rajasthani
+- Tamil
+- Telugu 
+- Urdu
+
+You can specify one or more languages using the `language` option. Example:
+```js
+cleanText('some text', { language: ['hindi', 'english'] });
 ```
 
 ---
 
-## 🤝 Contributing
+## Contributing
 
-Found a bug? Want to add more words or languages? Suggestions are always welcome! Please open an issue or a pull request. Let’s make the internet a little kinder, together.
+1. **Fork** this repository and clone your fork.
+2. Install dependencies:
+   ```sh
+   npm install
+   ```
+3. Add or improve abusive word lists in `src/abuse_words.js`.
+4. Add or update tests in `Test/cleanText.test.js`.
+5. Run tests:
+   ```sh
+   npm test
+   ```
+6. Submit a pull request with a clear description of your changes.
+
+**Guidelines:**
+- Please be respectful and avoid adding non-abusive or irrelevant words.
+- Keep word lists accurate and up-to-date for each language.
+- Add tests for any new features or language support.
 
 ---
 
-## 📄 License
+## Author
 
-MIT License. See [LICENSE](LICENSE) for details.
+Developed with ❤️ by [Nabarup](https://github.com/nabarupdev)
 
----
+If you find this package useful, ⭐ star the repo and share it!
 
-## 👤 Author
+## License
 
-Made with ❤️ by Nabarup Roy
+[MIT](LICENSE) © 2025 Nabarup.  
+Use freely. Contribute with respect.
+
+![npm version](https://img.shields.io/npm/v/cleantext)
+![npm downloads](https://img.shields.io/npm/dm/cleantext)
+![MIT License](https://img.shields.io/badge/license-MIT-green)
+
+## Feedback & Contact
+
+For feature requests, feedback, or bug reports, open an [issue](https://github.com/nabarupdev/cleantext/issues) or email me at nabaruproy.dev@gmail.com .
