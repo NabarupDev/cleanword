@@ -22,7 +22,7 @@ npm install cleantext
 
 ## Usage
 
-### Basic Example
+### Example
 ```js
 const { cleanText } = require('cleantext');
 
@@ -34,6 +34,28 @@ const options = {
 };
 const cleaned = cleanText('This is a test sentence with kutto and what.', options);
 console.log(cleaned); // This is a @@@@ sentence with kutto and @@@@..
+```
+
+### TypeScript Example
+```ts
+import { cleanText } from 'cleantext';
+
+interface CleanTextOptions {
+  language: string[];
+  grawlixChar: string;
+  alwaysAllow: string[];
+  alwaysBlock: string[];
+}
+
+const options: CleanTextOptions = {
+  language: ['english', 'hindi'],
+  grawlixChar: '@',
+  alwaysAllow: ['kutto'],
+  alwaysBlock: ['test', 'what'],
+};
+
+const cleaned: string = cleanText('This is a test sentence with kutto and what.', options);
+console.log(cleaned); // This is a @@@@ sentence with kutto and @@@@. 
 ```
 
 ### API
@@ -48,19 +70,6 @@ console.log(cleaned); // This is a @@@@ sentence with kutto and @@@@..
 
 Returns: The cleaned string with abusive words replaced by the grawlix character.
 
-#### Example with config options
-```js
-const options = {
-  language: ['english', 'hindi'],
-  grawlixChar: '@',
-  alwaysAllow: ['kutto'],
-  alwaysBlock: ['test', 'what'],
-};
-const cleaned = cleanText('This is a test sentence with kutto and what.', options);
-console.log(cleaned); // This is a @@@@ sentence with kutto and @@@@.
-```
-
----
 
 ## Config Options
 

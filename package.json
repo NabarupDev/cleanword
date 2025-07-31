@@ -1,13 +1,55 @@
 {
   "name": "cleantext",
   "version": "1.0.0",
-  "description": "",
+  "description": "A lightweight package to detect and filter profanity, especially Indian bad words.",
   "main": "index.js",
   "scripts": {
     "test": "jest"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "profanity",
+    "profane",
+    "obscenity",
+    "obscene",
+    "cussing",
+    "curse",
+    "cursing",
+    "swearing",
+    "swearwords",
+    "swear-words",
+    "vulgarity",
+    "badwords",
+    "bad-words",
+    "badlanguage",
+    "bad-language",
+    "dirtywords",
+    "dirty-words",
+    "censor",
+    "filter",
+    "indian profanity",
+    "indian cursing",
+    "indian cuss",
+    "indian swearwords",
+    "indian badwords",
+    "indian bad-words",
+    "indian vulgarity",
+    "indian badlanguage",
+    "indian bad-language",
+    "indian dirtywords",
+    "indian dirty-words",
+    "indian obscenity",
+    "indian obscene",
+    "indian obscenities"
+  ],
+  "author": "Nabarup <nabaruproy.dev@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nabarupdev/cleantext"
+  },
+  "bugs": {
+    "url": "https://github.com/nabarupdev/cleantext/issues"
+  },
+  "homepage": "https://github.com/nabarupdev/cleantext#readme",
   "license": "ISC",
   "type": "commonjs",
   "dependencies": {
