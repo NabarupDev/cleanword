@@ -1,10 +1,19 @@
 {
-  "name": "cleantext",
+  "name": "cleanword",
   "version": "1.0.0",
   "description": "A lightweight package to detect and filter profanity, especially Indian bad words.",
   "main": "index.js",
+  "types": "index.d.ts",
+  "files": [
+    "index.js",
+    "index.d.ts",
+    "src/",
+    "README.md",
+    "LICENSE"
+  ],
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "prepublishOnly": "npm test"
   },
   "keywords": [
     "profanity",
