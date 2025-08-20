@@ -1,5 +1,5 @@
 <div align="center">
- <h1>Cleantext</h1>
+ <h1>Cleanword</h1>
 </div>
 
 A simple, fast, and extensible JavaScript package to detect and censor abusive words in multiple Indian and international languages. Useful for chat moderation, content filtering, and building safe online communities.
@@ -15,7 +15,7 @@ A simple, fast, and extensible JavaScript package to detect and censor abusive w
 ## Installation
 
 ```sh
-npm install cleantext
+npm install cleanword
 ```
 
 ---
@@ -24,7 +24,7 @@ npm install cleantext
 
 ### Example
 ```js
-const { cleanText } = require('cleantext');
+const { cleanText } = require('cleanword');
 
 const options = {
   language: ['english', 'hindi'],
@@ -38,7 +38,7 @@ console.log(cleaned); // This is a @@@@ sentence with kutto and @@@@..
 
 ### TypeScript Example
 ```ts
-import { cleanText } from 'cleantext';
+import { cleanText } from 'cleanword';
 
 interface CleanTextOptions {
   language: string[];
@@ -149,10 +149,10 @@ If you find this package useful, ⭐ star the repo and share it!
 [MIT](LICENSE) © 2025 Nabarup.  
 Use freely. Contribute with respect.
 
-![npm version](https://img.shields.io/npm/v/cleantext)
-![npm downloads](https://img.shields.io/npm/dm/cleantext)
+![npm version](https://img.shields.io/npm/v/cleanword)
+![npm downloads](https://img.shields.io/npm/dm/cleanword)
 ![MIT License](https://img.shields.io/badge/license-MIT-green)
 
 ## Feedback & Contact
 
-For feature requests, feedback, or bug reports, open an [issue](https://github.com/nabarupdev/cleantext/issues) or email me at nabaruproy.dev@gmail.com .
+For feature requests, feedback, or bug reports, open an [issue](https://github.com/nabarupdev/cleanword/issues) or email me at nabaruproy.dev@gmail.com .

@@ -53,12 +53,12 @@
   "author": "Nabarup <nabaruproy.dev@gmail.com>",
   "repository": {
     "type": "git",
-    "url": "https://github.com/nabarupdev/cleantext"
+    "url": "https://github.com/nabarupdev/cleanword"
   },
   "bugs": {
-    "url": "https://github.com/nabarupdev/cleantext/issues"
+    "url": "https://github.com/nabarupdev/cleanword/issues"
   },
-  "homepage": "https://github.com/nabarupdev/cleantext#readme",
+  "homepage": "https://github.com/nabarupdev/cleanword#readme",
   "license": "ISC",
   "type": "commonjs",
   "dependencies": {
