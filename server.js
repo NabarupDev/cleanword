@@ -7,13 +7,19 @@ const port = 3000;
 
 app.use(bodyParser.json());
 
-app.post('/clean', async (req, res) => {
-  const { text } = req.body;
+app.post('/clean', (req, res) => {
+  const { text, options } = req.body;
   if (typeof text !== 'string') {
     return res.status(400).json({ error: 'Missing or invalid "text" field in request body.' });
   }
   try {
-    const cleaned = await cleanText(text);
+    // Default to both Hindi and English if no options provided
+    const defaultOptions = {
+      language: ['hindi', 'english'],
+      grawlixChar: '*'
+    };
+    const cleanOptions = options ? { ...defaultOptions, ...options } : defaultOptions;
+    const cleaned = cleanText(text, cleanOptions);
     res.json({ cleaned });
   } catch (err) {
     res.status(500).json({ error: 'Internal server error.' });
