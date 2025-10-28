@@ -34,6 +34,24 @@ function normalizeWord(word) {
 }
 
 /**
+ * Counts the number of grapheme clusters (visible characters) in a string.
+ * This handles combining marks (matras) in Indic scripts correctly.
+ * @param {string} str - The string to count.
+ * @returns {number} - The number of visible characters.
+ */
+function countGraphemes(str) {
+  // Use Intl.Segmenter if available (modern browsers/Node.js 16+)
+  if (typeof Intl !== 'undefined' && Intl.Segmenter) {
+    const segmenter = new Intl.Segmenter('en', { granularity: 'grapheme' });
+    return Array.from(segmenter.segment(str)).length;
+  }
+  // Fallback: Remove combining marks and count
+  // This works because combining marks (matras) attach to base characters
+  const withoutCombiningMarks = str.replace(/\p{M}/gu, '');
+  return withoutCombiningMarks.length;
+}
+
+/**
  * Cleans the input text by removing abusive words from all languages.
  * @param {string} text - The input text to clean.
  * @returns {string} - The cleaned text.
@@ -66,17 +84,22 @@ function cleanText(text, options = {}) {
   const alwaysAllow = Array.isArray(options.alwaysAllow) ? new Set(options.alwaysAllow.map(normalizeWord)) : new Set();
   const alwaysBlock = Array.isArray(options.alwaysBlock) ? new Set(options.alwaysBlock.map(normalizeWord)) : new Set();
   
-  // Match words including combining marks (matras, diacritics) for Indic scripts
-  return text.replace(/[\p{L}\p{M}\p{N}_]+/gu, (word) => {
+  // Match words that start with letters/numbers and may include combining marks (matras, diacritics)
+  // This prevents standalone combining marks from being matched
+  return text.replace(/[\p{L}\p{N}][\p{L}\p{M}\p{N}_]*/gu, (word) => {
     const normalized = /[\u0080-\uFFFF]/.test(word) ? normalizeWord(word) : word.trim().toLowerCase();
     if (alwaysAllow.has(normalized)) {
       return word; // Never censor
     }
     if (alwaysBlock.has(normalized)) {
-      return grawlixChar.repeat(word.length); // Always censor
+      // Count grapheme clusters (visible characters) for proper replacement
+      const graphemeCount = countGraphemes(word);
+      return grawlixChar.repeat(graphemeCount); // Always censor
     }
     if (setToUse.has(normalized)) {
-      return grawlixChar.repeat(word.length);
+      // Count grapheme clusters (visible characters) for proper replacement
+      const graphemeCount = countGraphemes(word);
+      return grawlixChar.repeat(graphemeCount);
     }
     return word;
   });
@@ -84,5 +107,6 @@ function cleanText(text, options = {}) {
 
 module.exports = {
   cleanText,
-  buildAbuseSetFromMap
+  buildAbuseSetFromMap,
+  countGraphemes
 };

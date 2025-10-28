@@ -1,3 +1,6 @@
+// WARNING: this file contains profanity. The below list of profane words is necessary for this tool to function properly.
+// Do not read below this line if you do not wish to be exposed to lots of profane words 
+
 
 const { cleanText } = require('../index');
 
@@ -49,7 +52,19 @@ describe('cleanText', () => {
       input: 'চুদি এবং হারামখোর এখানে আছে।',
       expected: expect.not.stringContaining('চুদি'),
       options: { language: ['bengali'], grawlixChar: '*' },
-      desc: 'should censor Bengali abusive words',
+      desc: 'should censor Bengali abusive words with correct grapheme count',
+    },
+    {
+      input: 'গালি চুদি',
+      expected: '** **',
+      options: { language: ['bengali'], grawlixChar: '*' },
+      desc: 'should replace Bengali words with correct number of grawlix (not counting matras)',
+    },
+    {
+      input: 'Your input text here গালি চুদি ',
+      expected: 'Your input text here ** ** ',
+      options: { language: ['bengali', 'hindi'], grawlixChar: '*' },
+      desc: 'should use custom grawlix for Bengali words with proper grapheme count',
     },
     {
       input: 'fuck',
@@ -82,6 +97,12 @@ describe('cleanText', () => {
       expected: '@@@@ fuck kutto @@@@',
       options: { language: ['english', 'hindi'], alwaysAllow: ['fuck', 'kutto'], alwaysBlock: ['Type', 'aand'], grawlixChar: '@' },
       desc: 'should use custom grawlix with alwaysAllow and alwaysBlock',
+    },
+    {
+      input: 'Text with standalone matras: া ি ী ু ূ ৃ ে ৈ should not be censored',
+      expected: 'Text with standalone matras: া ি ী ু ূ ৃ ে ৈ should not be censored',
+      options: { language: ['bengali', 'hindi', 'english'], grawlixChar: '*' },
+      desc: 'should not censor standalone Bengali matras (combining marks)',
     },
   ];
 
